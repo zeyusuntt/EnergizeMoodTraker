@@ -27,6 +27,8 @@ class LogList: ObservableObject, Identifiable {
     
     var id: String { name }
     
+    
+    
     private var userDefaultKey: String { "Logs of " + name }
     
     var logs: [Log] {
@@ -41,8 +43,11 @@ class LogList: ObservableObject, Identifiable {
         }
     }
     
+    var tags: [Tag]
+    
     init(named name: String) {
         self.name = name
+        tags = TagList(named: name).tags
         if logs.isEmpty {
             logs = Log.test
         }
@@ -59,7 +64,7 @@ class LogList: ObservableObject, Identifiable {
         }
     }
     
-    func insert(emotion: String, tag: String, description: String, startDate: Date, endDate: Date, at index: Int? = nil) {
+    func insert(emotion: Emotion, tag: Tag, description: String, startDate: Date, endDate: Date, at index: Int? = nil) {
         insert(Log(emotion: emotion, tag: tag, description: description, startDate: startDate, endDate: endDate), at: index)
     }
     
@@ -76,7 +81,7 @@ class LogList: ObservableObject, Identifiable {
         }
     }
     
-    func append(emotion: String, tag: String, description: String, startDate: Date, endDate: Date) {
+    func append(emotion: Emotion, tag: Tag, description: String, startDate: Date, endDate: Date) {
         append(Log(emotion: emotion, tag: tag, description: description, startDate: startDate, endDate: endDate))
     }
 }

@@ -16,6 +16,9 @@
 		5D0D14222A305CEE0097DA49 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D14212A305CEE0097DA49 /* LogListView.swift */; };
 		5D0D14242A306EF30097DA49 /* LogEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D14232A306EF30097DA49 /* LogEditor.swift */; };
 		5DE455D52A3078AA00A31A0A /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE455D42A3078AA00A31A0A /* AnalysisView.swift */; };
+		5DE455D92A30D94B00A31A0A /* TagList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE455D82A30D94B00A31A0A /* TagList.swift */; };
+		5DE455DB2A30E7CD00A31A0A /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE455DA2A30E7CD00A31A0A /* AspectVGrid.swift */; };
+		5DE455DD2A31211C00A31A0A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE455DC2A31211C00A31A0A /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		5D0D14212A305CEE0097DA49 /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 		5D0D14232A306EF30097DA49 /* LogEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEditor.swift; sourceTree = "<group>"; };
 		5DE455D42A3078AA00A31A0A /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
+		5DE455D82A30D94B00A31A0A /* TagList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagList.swift; sourceTree = "<group>"; };
+		5DE455DA2A30E7CD00A31A0A /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		5DE455DC2A31211C00A31A0A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +52,6 @@
 		5D0D14022A304E310097DA49 = {
 			isa = PBXGroup;
 			children = (
-				5D0D14232A306EF30097DA49 /* LogEditor.swift */,
 				5D0D140D2A304E310097DA49 /* EnergizeMoodTraker */,
 				5D0D140C2A304E310097DA49 /* Products */,
 			);
@@ -65,9 +70,13 @@
 			children = (
 				5D0D140E2A304E310097DA49 /* EnergizeMoodTrakerApp.swift */,
 				5D0D14212A305CEE0097DA49 /* LogListView.swift */,
+				5DE455DC2A31211C00A31A0A /* Entry.swift */,
 				5D0D14102A304E310097DA49 /* ContentView.swift */,
+				5DE455DA2A30E7CD00A31A0A /* AspectVGrid.swift */,
 				5DE455D42A3078AA00A31A0A /* AnalysisView.swift */,
+				5D0D14232A306EF30097DA49 /* LogEditor.swift */,
 				5D0D141D2A3051A40097DA49 /* Log.swift */,
+				5DE455D82A30D94B00A31A0A /* TagList.swift */,
 				5D0D141F2A3056F90097DA49 /* LogList.swift */,
 				5D0D14122A304E320097DA49 /* Assets.xcassets */,
 				5D0D14142A304E320097DA49 /* EnergizeMoodTraker.entitlements */,
@@ -154,13 +163,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE455DD2A31211C00A31A0A /* Entry.swift in Sources */,
 				5D0D14112A304E310097DA49 /* ContentView.swift in Sources */,
 				5DE455D52A3078AA00A31A0A /* AnalysisView.swift in Sources */,
 				5D0D140F2A304E310097DA49 /* EnergizeMoodTrakerApp.swift in Sources */,
 				5D0D14202A3056F90097DA49 /* LogList.swift in Sources */,
 				5D0D141E2A3051A40097DA49 /* Log.swift in Sources */,
+				5DE455D92A30D94B00A31A0A /* TagList.swift in Sources */,
 				5D0D14222A305CEE0097DA49 /* LogListView.swift in Sources */,
 				5D0D14242A306EF30097DA49 /* LogEditor.swift in Sources */,
+				5DE455DB2A30E7CD00A31A0A /* AspectVGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

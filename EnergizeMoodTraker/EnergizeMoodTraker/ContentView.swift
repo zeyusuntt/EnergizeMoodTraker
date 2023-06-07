@@ -65,6 +65,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showNewAddedLog) {
             LogEditor(log: $logList.logs[0])
+                .environmentObject(TagList(named: logList.name))
         }
     }
 }
@@ -93,7 +94,7 @@ struct CustomTabView: View {
             Spacer()
             
             Button {
-                logList.insert(emotion: "", tag: "", description: "", startDate: Date(), endDate: Date(), at:0)
+                logList.insert(emotion: Emotion(emoji: "", name: ""), tag: Tag(emoji: "", name: "", category: ""), description: "", startDate: Date(), endDate: Date(), at:0)
                 showNewAddedLog = true
             } label: {
                 ZStack {
