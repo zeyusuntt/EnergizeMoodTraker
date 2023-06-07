@@ -70,6 +70,7 @@ struct ContentView: View {
     }
 }
 
+
 struct CustomTabView: View {
     @Binding var selectedTab: Tab
     @Binding var showNewAddedLog: Bool

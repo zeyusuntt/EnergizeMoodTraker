@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LogEditor: View {
     @Binding var log: Log
-    
+    @State private var showAddTagSheet = false
     @EnvironmentObject var tagList: TagList
     
     let rows = [
@@ -49,25 +49,132 @@ struct LogEditor: View {
             }
             
             Section(header: Text("Tags")) {
+                Text("Social")
+                    .foregroundColor(.gray)
+                    .font(.system(size:15))
                 LazyVGrid(columns: columns) {
                     ForEach(tagList.tags) { tag in
-                        VStack {
-                            Text(tag.emoji)
-                                .font(.system(size: 45))
-                                .scaleEffect(log.tag.name == tag.name ? 1.1 : 1.0) // Scale up the selected emoji
-                            
-                            Text(tag.name)
-                                .font(.system(size: 8))
+                        if tag.category == "Social" {
+                            VStack {
+                                Text(tag.emoji)
+                                    .font(.system(size: 45))
+                                    .scaleEffect(log.tag.name == tag.name ? 1.1 : 1.0) // Scale up the selected emoji
+                                
+                                Text(tag.name)
+                                    .font(.system(size: 8))
+                            }
+                            .opacity(log.tag.name == tag.name ? 0.5: 1)
+                            .onTapGesture {
+                                withAnimation {
+                                    log.tag = Tag(emoji: tag.emoji, name: tag.name, category: tag.category)
+                                }
+                            }
                         }
-                        .opacity(log.tag.name == tag.name ? 0.5: 1)
-                        .onTapGesture {
-                            withAnimation {
-                                log.tag = Tag(emoji: tag.emoji, name: tag.name, category: tag.category)
-                                                }
+                    }
+                }
+                Text("Hobbies")
+                    .foregroundColor(.gray)
+                    .font(.system(size:15))
+                LazyVGrid(columns: columns) {
+                    ForEach(tagList.tags) { tag in
+                        if tag.category == "Hobbies" {
+                            VStack {
+                                Text(tag.emoji)
+                                    .font(.system(size: 45))
+                                    .scaleEffect(log.tag.name == tag.name ? 1.1 : 1.0) // Scale up the selected emoji
+                                
+                                Text(tag.name)
+                                    .font(.system(size: 8))
+                            }
+                            .opacity(log.tag.name == tag.name ? 0.5: 1)
+                            .onTapGesture {
+                                withAnimation {
+                                    log.tag = Tag(emoji: tag.emoji, name: tag.name, category: tag.category)
+                                }
+                            }
+                        }
+                    }
+                }
+                Text("Sleep")
+                    .foregroundColor(.gray)
+                    .font(.system(size:15))
+                LazyVGrid(columns: columns) {
+                    ForEach(tagList.tags) { tag in
+                        if tag.category == "Sleep" {
+                            VStack {
+                                Text(tag.emoji)
+                                    .font(.system(size: 45))
+                                    .scaleEffect(log.tag.name == tag.name ? 1.1 : 1.0) // Scale up the selected emoji
+                                
+                                Text(tag.name)
+                                    .font(.system(size: 8))
+                            }
+                            .opacity(log.tag.name == tag.name ? 0.5: 1)
+                            .onTapGesture {
+                                withAnimation {
+                                    log.tag = Tag(emoji: tag.emoji, name: tag.name, category: tag.category)
+                                }
+                            }
+                        }
+                    }
+                }
+                Text("Health")
+                    .foregroundColor(.gray)
+                    .font(.system(size:15))
+                LazyVGrid(columns: columns) {
+                    ForEach(tagList.tags) { tag in
+                        if tag.category == "Health" {
+                            VStack {
+                                Text(tag.emoji)
+                                    .font(.system(size: 45))
+                                    .scaleEffect(log.tag.name == tag.name ? 1.1 : 1.0) // Scale up the selected emoji
+                                
+                                Text(tag.name)
+                                    .font(.system(size: 8))
+                            }
+                            .opacity(log.tag.name == tag.name ? 0.5: 1)
+                            .onTapGesture {
+                                withAnimation {
+                                    log.tag = Tag(emoji: tag.emoji, name: tag.name, category: tag.category)
+                                }
+                            }
+                        }
+                    }
+                }
+                Text("Better Me")
+                    .foregroundColor(.gray)
+                    .font(.system(size:15))
+                LazyVGrid(columns: columns) {
+                    ForEach(tagList.tags) { tag in
+                        if tag.category == "Better Me" {
+                            VStack {
+                                Text(tag.emoji)
+                                    .font(.system(size: 45))
+                                    .scaleEffect(log.tag.name == tag.name ? 1.1 : 1.0) // Scale up the selected emoji
+                                
+                                Text(tag.name)
+                                    .font(.system(size: 8))
+                            }
+                            .opacity(log.tag.name == tag.name ? 0.5: 1)
+                            .onTapGesture {
+                                withAnimation {
+                                    log.tag = Tag(emoji: tag.emoji, name: tag.name, category: tag.category)
+                                }
+                            }
                         }
                     }
                 }
             }
+            
+            Button(action: {
+                showAddTagSheet = true
+            }) {
+                Text("Add Tag")
+            }
+            .sheet(isPresented: $showAddTagSheet) {
+                AddTagView()
+            }
+            
             Section(header: Text("Start Time")) {
                 DatePicker("", selection: $log.startDate, displayedComponents: [.date, .hourAndMinute])
                             .labelsHidden()
